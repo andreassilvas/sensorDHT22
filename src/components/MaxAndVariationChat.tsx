@@ -9,25 +9,26 @@ import {
   Legend,
 } from "recharts";
 
-interface TempHumiChartProps {
+interface MaxAndVariationChartProps {
   data: {
     hour: string;
-    temperature: number;
-    humidity: number;
+    maxTemp: number;
+    humidityVariation: number;
   }[];
 }
 
-export const TempHumiChart = ({ data }: TempHumiChartProps) => {
+export const MaxAndVariationChart = ({ data }: MaxAndVariationChartProps) => {
   return (
     <div
       style={{
         width: "100%",
         height: "280px",
         marginBottom: "50px",
+        marginTop: "50px",
       }}
     >
       <h5 className="mb-2 ps-4 text-center text-secondary">
-        Évolution de la température et du taux d'humidité
+        Variation du taux d'humidité relatif à la température maximale
       </h5>
 
       <ResponsiveContainer width="95%" height="100%">
@@ -62,17 +63,17 @@ export const TempHumiChart = ({ data }: TempHumiChartProps) => {
 
           <Line
             type="monotone"
-            dataKey="temperature"
+            dataKey="maxTemp"
             stroke="#ff6e6e"
             strokeWidth={2}
             name="Temperature °C"
           />
           <Line
             type="monotone"
-            dataKey="humidity"
+            dataKey="humidityVariation"
             stroke="#5ec0fd"
             strokeWidth={2}
-            name="Humidity %"
+            name="Humidity variation %"
           />
         </LineChart>
       </ResponsiveContainer>
