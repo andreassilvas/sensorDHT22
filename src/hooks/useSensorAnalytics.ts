@@ -21,6 +21,7 @@ export const useSensorAnalytics = ({
         const avg = sum / values.length;
 
         return {
+          timestamp: Number(label),
           hour: new Date(Number(label)).toLocaleString([], {
             day: "2-digit",
             month: "2-digit",
@@ -39,6 +40,7 @@ export const useSensorAnalytics = ({
         const avg = sum / values.length;
 
         return {
+          timestamp: Number(label),
           hour: new Date(Number(label)).toLocaleString([], {
             day: "2-digit",
             month: "2-digit",
@@ -53,11 +55,13 @@ export const useSensorAnalytics = ({
 
     const combinedHourlyData = hourlyAverageTemperature.map(
       (tempItem, index) => ({
+        timestamp: tempItem.timestamp,
         hour: tempItem.hour,
         temperature: tempItem.value,
         humidity: hourlyAverageHumidity[index]?.value ?? null,
       }),
     );
+    // console.log("NEW: ",combinedHourlyData)
     //------------------Daily Averages---------------------------------------------
 
     const dailyAverageTemperature = Object.entries(dailyTemperature).map(

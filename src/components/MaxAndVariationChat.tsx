@@ -31,7 +31,7 @@ export const MaxAndVariationChart = ({ data }: MaxAndVariationChartProps) => {
         Variation du taux d'humidité relatif à la température maximale
       </h5>
 
-      <ResponsiveContainer width="95%" height="100%">
+      <ResponsiveContainer width="100%" height="100%">
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis
@@ -57,6 +57,7 @@ export const MaxAndVariationChart = ({ data }: MaxAndVariationChartProps) => {
           <Tooltip />
           <Legend
             verticalAlign="bottom"
+            iconType="rect"
             align="left"
             wrapperStyle={{ paddingTop: 20, paddingLeft: 55 }}
           />
@@ -64,16 +65,18 @@ export const MaxAndVariationChart = ({ data }: MaxAndVariationChartProps) => {
           <Line
             type="monotone"
             dataKey="maxTemp"
-            stroke="#ff6e6e"
+            stroke="#E36463"
             strokeWidth={2}
-            name="Temperature °C"
+            dot={false}
+            name="Température maximale °C"
           />
           <Line
             type="monotone"
             dataKey="humidityVariation"
-            stroke="#5ec0fd"
+            stroke="#6A6ED2"
             strokeWidth={2}
-            name="Humidity variation %"
+            dot={false}
+            name="Humidité relatif %"
           />
         </LineChart>
       </ResponsiveContainer>

@@ -30,7 +30,7 @@ export const TempHumiChart = ({ data }: TempHumiChartProps) => {
         Évolution de la température et du taux d'humidité
       </h5>
 
-      <ResponsiveContainer width="95%" height="100%">
+      <ResponsiveContainer width="100%" height="100%">
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis
@@ -57,22 +57,25 @@ export const TempHumiChart = ({ data }: TempHumiChartProps) => {
           <Legend
             verticalAlign="bottom"
             align="left"
+            iconType="rect"
             wrapperStyle={{ paddingTop: 20, paddingLeft: 55 }}
           />
 
           <Line
             type="monotone"
             dataKey="temperature"
-            stroke="#ff6e6e"
+            stroke="#E36463"
             strokeWidth={2}
-            name="Temperature °C"
+            dot={false}
+            name="Température °C"
           />
           <Line
             type="monotone"
             dataKey="humidity"
-            stroke="#5ec0fd"
+            stroke="#6A6ED2"
             strokeWidth={2}
-            name="Humidity %"
+            dot={false}
+            name="Humidité %"
           />
         </LineChart>
       </ResponsiveContainer>

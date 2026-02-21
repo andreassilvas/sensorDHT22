@@ -4,17 +4,25 @@ interface KPIBoxProps {
   src: string;
   alt: string;
   fill?: string;
+  hightLowAlert?: React.ReactNode;
 }
 
-export const KPIBox = ({ title, value, src, alt, fill }: KPIBoxProps) => {
+export const KPIBox = ({
+  title,
+  value,
+  src,
+  alt,
+  fill,
+  hightLowAlert,
+}: KPIBoxProps) => {
   return (
-    <div className="col-6 mb-3">
+    <div className="col-3 mb-3">
       <div
         className="card text-center shadow-sm rounded-5 border-2 p-3 card"
         style={{
           backgroundColor: "#f9f9f9",
-          width: "400px",
-          borderColor: "#BAA7E2",
+          width: "300px",
+          borderColor: "#DBDBDB",
         }}
       >
         <div className="card-body">
@@ -25,6 +33,7 @@ export const KPIBox = ({ title, value, src, alt, fill }: KPIBoxProps) => {
             </span>
             {value}
           </h2>
+          {hightLowAlert}
         </div>
       </div>
     </div>
