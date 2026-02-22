@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { Navbar } from "./Navbar/Navbar";
 import Dashboard from "./pages/Dashboard";
 import TemperatureHistory from "./pages/TemperatureHistory";
+import { Info } from "./pages/Info";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/historique" element={<TemperatureHistory />} />
+          <Route path="/propos" element={<Info />} />
         </Routes>
       </main>
     </div>

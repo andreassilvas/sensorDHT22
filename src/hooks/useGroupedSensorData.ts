@@ -43,8 +43,6 @@ export const useGroupedSensorData = (
 
                 hourlyHumidity[hourStampK].push(item.humidity);
                 dailyHumidity[dayStampK].push(item.humidity);
-
-    //console.log("Daily grouped:", dailyTemperature);
         });
 
         return {

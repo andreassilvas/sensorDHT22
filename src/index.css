@@ -1,3 +1,7 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
 
 body {
   min-height: 100vh;
@@ -24,6 +28,27 @@ html, body {
   color: white !important;
 }
 
+/* custom background color list */
+.customList li{
+  background-color: #D6D9FA;
+}
+
+.customList-s li {
+background-color: #FFE1CB;
+}
+
+.customCard {
+  background-color: #F6F7FE;
+}
+.customCard-s {
+  background-color: #FFF3EB;
+}
+
+.customBadge {
+  background-color: #683FBE;
+}
+
+/* custom buttom */
 .btn-purple {
   --bs-btn-font-weight: 600;
   --bs-btn-color: #fff;
@@ -36,4 +61,5 @@ html, body {
 
   --bs-btn-active-bg: #4e2d8c;
   --bs-btn-active-border-color: #4e2d8c;
+  --bs-btn-active-color: #fff;
 }

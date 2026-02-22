@@ -4,8 +4,12 @@ import brandLogo from "../assets/images/brand.webp";
 export const Navbar = () => {
   return (
     <nav
-      className="nav flex-column vh-100 p-2 rounded-end-2"
-      style={{ backgroundColor: "#1E075C", width: "280px" }}
+      className="nav flex-column p-2 rounded-end-2"
+      style={{
+        backgroundColor: "#1E075C",
+        width: "280px",
+        minHeight: "100vh",
+      }}
     >
       <div>
         <a className="navbar-brand" href="#">
@@ -33,9 +37,17 @@ export const Navbar = () => {
             `nav-link rounded d-flex align-items-center gap-2 nav-hover-lightViolet mb-2 me-2 ${isActive ? "active fw-bold" : ""}`
           }
         >
-          <i className="bi bi-thermometer-half fs-5 text-white"></i>
-          <i className="bi bi-droplet-half fs-5 text-light"></i>
+          <i className="bi bi-clock-history fs-5 text-white"></i>
           <span className="text-white">Historique</span>
+        </NavLink>
+        <NavLink
+          to="/propos"
+          className={({ isActive }) =>
+            `nav-link rounded d-flex align-items-center gap-2 nav-hover-lightViolet mb-2 me-2 ${isActive ? "active fw-bold" : ""}`
+          }
+        >
+          <i className="bi bi-journal-bookmark fs-5 text-white"></i>
+          <span className="text-white">à propos</span>
         </NavLink>
       </div>
     </nav>

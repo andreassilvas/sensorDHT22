@@ -76,7 +76,7 @@ export const MaxAndVariationChart = ({ data }: MaxAndVariationChartProps) => {
             stroke="#6A6ED2"
             strokeWidth={2}
             dot={false}
-            name="Humidité relatif %"
+            name="Variation du taux d'humidité %"
           />
         </LineChart>
       </ResponsiveContainer>

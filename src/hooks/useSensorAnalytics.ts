@@ -14,76 +14,84 @@ export const useSensorAnalytics = ({
   dailyTemperature,
 }: GroupedData) => {
   return useMemo(() => {
+
+     const computeHourlyValues = (vals: number[]) => {
+      if (vals.length === 1) return vals[0];
+
+      const sum = vals.reduce((acc, val) => acc + val, 0);
+      return sum / vals.length;
+    };
     //------------------Hourly Averages---------------------------------------------
     const hourlyAverageTemperature = Object.entries(hourlyTemperature).map(
       ([label, values]) => {
-        const sum = values.reduce((acc, val) => acc + val, 0);
-        const avg = sum / values.length;
+        
+        const value = computeHourlyValues(values);
 
         return {
           timestamp: Number(label),
           hour: new Date(Number(label)).toLocaleString([], {
-            day: "2-digit",
             month: "2-digit",
+            day: "2-digit",
+            year: "numeric",
             hour: "2-digit",
             minute: "2-digit",
             hour12: false,
           }),
-          value: Number(avg.toFixed(2)),
+          value: Number(value.toFixed(2)),
         };
       },
     );
 
     const hourlyAverageHumidity = Object.entries(hourlyHumidity).map(
       ([label, values]) => {
-        const sum = values.reduce((acc, val) => acc + val, 0);
-        const avg = sum / values.length;
+        
+         const value = computeHourlyValues(values);
 
         return {
           timestamp: Number(label),
           hour: new Date(Number(label)).toLocaleString([], {
-            day: "2-digit",
             month: "2-digit",
+            day: "2-digit",
+            year: "numeric",
             hour: "2-digit",
             minute: "2-digit",
             hour12: false,
           }),
-          value: Number(avg.toFixed(2)),
+          value: Number(value.toFixed(2)),
         };
       },
     );
 
     const combinedHourlyData = hourlyAverageTemperature.map(
       (tempItem, index) => ({
-        timestamp: tempItem.timestamp,
-        hour: tempItem.hour,
-        temperature: tempItem.value,
+      timestamp: tempItem.timestamp,
+      hour: tempItem.hour,
+      temperature: tempItem.value,
         humidity: hourlyAverageHumidity[index]?.value ?? null,
       }),
     );
     // console.log("NEW: ",combinedHourlyData)
     //------------------Daily Averages---------------------------------------------
-
     const dailyAverageTemperature = Object.entries(dailyTemperature).map(
       ([day, values]) => {
-        const sum = values.reduce((acc, val) => acc + val, 0);
-        const avg = sum / values.length;
+
+        const value = computeHourlyValues(values);
 
         return {
           hour: day,
-          value: Number(avg.toFixed(2)),
+          value: Number(value.toFixed(2)),
         };
       },
     );
 
     const dailyAverageHumidity = Object.entries(dailyHumidity).map(
       ([day, values]) => {
-        const sum = values.reduce((acc, val) => acc + val, 0);
-        const avg = sum / values.length;
+
+        const value = computeHourlyValues(values);
 
         return {
           hour: day,
-          value: Number(avg.toFixed(2)),
+          value: Number(value.toFixed(2)),
         };
       },
     );
@@ -95,13 +103,13 @@ export const useSensorAnalytics = ({
         humidity: dailyAverageHumidity[index]?.value ?? null,
       }),
     );
-
     //------------------Hourly Extremes---------------------------------------------
     const hourlyMaxTemperature = Object.entries(hourlyTemperature).map(
       ([label, temps]) => ({
         hour: new Date(Number(label)).toLocaleString([], {
-          day: "2-digit",
           month: "2-digit",
+          day: "2-digit",
+          year: "numeric",
           hour: "2-digit",
           minute: "2-digit",
           hour12: false,

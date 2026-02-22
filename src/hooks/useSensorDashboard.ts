@@ -25,7 +25,7 @@ export const useSensorDashboard = (period: "history" | "15d" | "30d") => {
     return () => clearInterval(interval);
   }, []);
 
-  const OFFLINE_THRESHOLD = 20 * 60;
+  const OFFLINE_THRESHOLD = 70 * 60;
   const isOffline = lastReading
     ? currentTime - lastReading.timestamp > OFFLINE_THRESHOLD
     : false;

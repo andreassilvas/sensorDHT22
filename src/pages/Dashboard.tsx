@@ -22,6 +22,8 @@ const Dashboard = () => {
     dailyExtremesData,
   } = useSensorDashboard(period);
 
+  //console.log(" hourlyExtremesData", hourlyExtremesData); //temp good
+
   if (isLoading) return <SpinnerLoader fullPage />;
   if (isError) return <h1>Error loading data</h1>;
 
@@ -101,7 +103,7 @@ const Dashboard = () => {
             className={`btn me-2 ${period === "history" ? "btn btn-secondary" : "btn-outline-secondary"}`}
             onClick={() => setPeriod("history")}
           >
-            Historique
+            Par heure
           </button>
 
           <button

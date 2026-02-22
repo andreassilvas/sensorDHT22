@@ -75,7 +75,7 @@ export const TempHumiChart = ({ data }: TempHumiChartProps) => {
             stroke="#6A6ED2"
             strokeWidth={2}
             dot={false}
-            name="Humidité %"
+            name="Taux d'humidité %"
           />
         </LineChart>
       </ResponsiveContainer>
