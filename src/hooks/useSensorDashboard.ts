@@ -4,7 +4,7 @@ import { useSensorAnalytics } from "./useSensorAnalytics";
 import { useSensorData } from "./useSensorData";
 import { useEffect, useState } from "react";
 
-export const useSensorDashboard = (period: "history" | "15d" | "30d") => {
+export const useSensorDashboard = (period: "history" | "7d" | "10d") => {
   const { data, isLoading, isError } = useSensorData();
 
   const filterData = useFilteredData(data, period);

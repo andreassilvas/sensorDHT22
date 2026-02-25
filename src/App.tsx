@@ -12,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/historique" element={<TemperatureHistory />} />
-          <Route path="/propos" element={<Info />} />
+          <Route path="/apropos" element={<Info />} />
         </Routes>
       </main>
     </div>

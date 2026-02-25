@@ -3,7 +3,7 @@ import type { SensorDHTData } from "./useSensorData";
 
 export const useFilteredData = (
   data: SensorDHTData[],
-  period: "history" | "15d" | "30d"
+  period: "history" | "7d" | "10d"
 ) => {
   return useMemo(() => {
     if (!data.length) return [];
@@ -13,13 +13,13 @@ export const useFilteredData = (
     const DAY = 24 * 60 * 60;
 
     switch (period) {
-      case "15d":
+      case "7d":
         return data.filter(
-          (d) => d.timestamp >= latestTimestamp - 15 * DAY
+          (d) => d.timestamp >= latestTimestamp - 8 * DAY
         );
-      case "30d":
+      case "10d":
         return data.filter(
-          (d) => d.timestamp >= latestTimestamp - 30 * DAY
+          (d) => d.timestamp >= latestTimestamp - 11 * DAY
         );
       default:
         return data;

@@ -41,13 +41,13 @@ export const Navbar = () => {
           <span className="text-white">Historique</span>
         </NavLink>
         <NavLink
-          to="/propos"
+          to="/apropos"
           className={({ isActive }) =>
             `nav-link rounded d-flex align-items-center gap-2 nav-hover-lightViolet mb-2 me-2 ${isActive ? "active fw-bold" : ""}`
           }
         >
           <i className="bi bi-journal-bookmark fs-5 text-white"></i>
-          <span className="text-white">à propos</span>
+          <span className="text-white">À propos</span>
         </NavLink>
       </div>
     </nav>

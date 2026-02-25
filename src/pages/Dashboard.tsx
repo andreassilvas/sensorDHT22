@@ -8,7 +8,7 @@ import { useSensorDashboard } from "../hooks/useSensorDashboard";
 import SpinnerLoader from "../components/SpinnerLoader";
 
 const Dashboard = () => {
-  const [period, setPeriod] = useState<"history" | "15d" | "30d">("history");
+  const [period, setPeriod] = useState<"history" | "7d" | "10d">("history");
   const {
     isLoading,
     isError,
@@ -21,8 +21,6 @@ const Dashboard = () => {
     hourlyExtremesData,
     dailyExtremesData,
   } = useSensorDashboard(period);
-
-  //console.log(" hourlyExtremesData", hourlyExtremesData); //temp good
 
   if (isLoading) return <SpinnerLoader fullPage />;
   if (isError) return <h1>Error loading data</h1>;
@@ -107,17 +105,17 @@ const Dashboard = () => {
           </button>
 
           <button
-            className={`btn me-2 ${period === "15d" ? "btn btn-secondary" : "btn-outline-secondary"}`}
-            onClick={() => setPeriod("15d")}
+            className={`btn me-2 ${period === "7d" ? "btn btn-secondary" : "btn-outline-secondary"}`}
+            onClick={() => setPeriod("7d")}
           >
-            15 Jours
+            7 Jours
           </button>
 
           <button
-            className={`btn ${period === "30d" ? "btn btn-secondary" : "btn-outline-secondary"}`}
-            onClick={() => setPeriod("30d")}
+            className={`btn ${period === "10d" ? "btn btn-secondary" : "btn-outline-secondary"}`}
+            onClick={() => setPeriod("10d")}
           >
-            30 Jours
+            10 Jours
           </button>
         </div>
       </div>

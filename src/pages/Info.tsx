@@ -85,7 +85,7 @@ export const Info = () => {
                     <div className="fw-bold">
                       Mini HDMI adaptateur (facultatif)
                     </div>
-                    pour se connecter à un moniteur.
+                    pour connecter au moniteur.
                   </div>
                   <span className="badge customBadge rounded-pill">1</span>
                 </li>
