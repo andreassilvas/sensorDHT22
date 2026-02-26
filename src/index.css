@@ -5,82 +5,25 @@ html, body, #root {
 
 body {
   min-height: 100vh;
+  font-family: "Noto Sans", sans-serif;
 }
 
 html, body {
   overflow-x: hidden;
 }
-.nav-hover-lightViolet {
-  transition: background-color 0.2s ease;
+html {
+  font-size: 16px;
+}
+/* tablet */
+@media (max-width: 992px){
+  html {
+    font-size: 15.5px;
+  }
 }
 
-.nav-hover-lightViolet:hover {
-  background-color: #683FBE;
-  color: white !important;
-}
-
-.nav-hover-lightViolet:hover span {
-  color: white;
-}
-
-.nav-hover-lightViolet.active {
-  background-color: #683FBE;
-  color: white !important;
-}
-
-/* custom background color list */
-.customList li{
-  background-color: #D6D9FA;
-}
-
-.customList-s li {
-background-color: #FFE1CB;
-}
-
-.customCard {
-  background-color: #F6F7FE;
-}
-.customCard-s {
-  background-color: #FFF3EB;
-}
-
-.customBadge {
-  background-color: #683FBE;
-}
-
-/* custom buttom */
-.btn-purple {
-  --bs-btn-font-weight: 600;
-  --bs-btn-color: #fff;
-  --bs-btn-bg: #683FBE;
-  --bs-btn-padding-y: .4rem; 
-  --bs-btn-padding-x: .6rem; 
-  --bs-btn-font-size: .75rem;
-  --bs-btn-border-color: #683FBE;
-
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #5a35a0;
-  --bs-btn-hover-border-color: #5a35a0;
-
-  --bs-btn-active-bg: #4e2d8c;
-  --bs-btn-active-border-color: #4e2d8c;
-  --bs-btn-active-color: #fff;
-}
-
-.btn-purple-outline {
-  --bs-btn-font-weight: 600;
-  --bs-btn-color: #683FBE;
-  --bs-btn-bg: #fff;
-  --bs-btn-padding-y: .3rem; 
-  --bs-btn-padding-x: .6rem; 
-  --bs-btn-font-size: .75rem;
-  --bs-btn-border-color: #683FBE;
-
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #5a35a0;
-  --bs-btn-hover-border-color: #5a35a0;
-
-  --bs-btn-active-bg: #4e2d8c;
-  --bs-btn-active-border-color: #4e2d8c;
-  --bs-btn-active-color: #fff;
+/* Mobile */
+@media (max-width: 768px){
+  html {
+    font-size: 15px;
+  }
 }

@@ -33,7 +33,7 @@ const Dashboard = () => {
             {isOffline ? (
               <span className="badge bg-danger p-2">Capteur hors ligne</span>
             ) : (
-              <span className="badge bg-success">Capteur en ligne</span>
+              <span className="badge bg-success p-2">Capteur en ligne</span>
             )}
           </div>
         </div>
@@ -81,7 +81,7 @@ const Dashboard = () => {
                   className="fw-medium mt-2"
                   style={{ fontSize: "13px", color: "#21AB6F" }}
                 >
-                  T. idéale : {"<"} 21 {"\u00B0C"}
+                  Temp. idéale : {"<"} 21 {"\u00B0C"}
                 </span>
               )
             }

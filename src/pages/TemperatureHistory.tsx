@@ -52,7 +52,7 @@ const TemperatureHistory = () => {
     return result;
   };
 
-  const tableData = generateFullHourRange(sortedHourly);
+  const tableData = generateFullHourRange(sortedHourly).reverse();
 
   const formatValue = (value: number | null) => value ?? "hors ligne";
   const exporte = () => {
@@ -69,17 +69,17 @@ const TemperatureHistory = () => {
     headCells: {
       style: {
         background: "#ECF8ED",
-        fontSize: "16px",
+        fontSize: "14px",
       },
     },
     rows: {
       style: {
-        fontSize: "16px",
+        fontSize: "14px",
       },
     },
     pagination: {
       style: {
-        fontSize: "16px",
+        fontSize: "14px",
       },
     },
   };
@@ -118,7 +118,8 @@ const TemperatureHistory = () => {
             responsive
             dense
             customStyles={customStyle}
-            paginationRowsPerPageOptions={[15, 20]}
+            paginationPerPage={15}
+            paginationRowsPerPageOptions={[15, 20, 30]}
             actions={
               <button
                 className="btn btn-success btn-sm"

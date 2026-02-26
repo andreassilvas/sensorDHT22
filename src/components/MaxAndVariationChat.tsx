@@ -59,7 +59,7 @@ export const MaxAndVariationChart = ({ data }: MaxAndVariationChartProps) => {
             verticalAlign="bottom"
             iconType="rect"
             align="left"
-            wrapperStyle={{ paddingTop: 20, paddingLeft: 55 }}
+            wrapperStyle={{ paddingTop: 20, paddingLeft: 55, fontSize: 15 }}
           />
 
           <Line

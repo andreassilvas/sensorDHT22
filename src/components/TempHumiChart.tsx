@@ -58,7 +58,7 @@ export const TempHumiChart = ({ data }: TempHumiChartProps) => {
             verticalAlign="bottom"
             align="left"
             iconType="rect"
-            wrapperStyle={{ paddingTop: 20, paddingLeft: 55 }}
+            wrapperStyle={{ paddingTop: 20, paddingLeft: 55, fontSize: 15 }}
           />
 
           <Line
