@@ -21,7 +21,6 @@ export const KPIBox = ({
         className="card text-center shadow-sm rounded-5 border-2 p-3 card"
         style={{
           backgroundColor: "#f9f9f9",
-          width: "300px",
           borderColor: "#DBDBDB",
         }}
       >
