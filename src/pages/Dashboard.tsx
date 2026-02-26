@@ -95,8 +95,7 @@ const Dashboard = () => {
         </div>
       </div>
       <div className="row">
-        <div className="col-3"></div>
-        <div className="col-9 d-flex justify-content-start ps-5">
+        <div className="col-12 d-flex justify-content-start ps-5">
           <button
             className={`btn me-2 ${period === "history" ? "btn btn-secondary" : "btn-outline-secondary"}`}
             onClick={() => setPeriod("history")}
