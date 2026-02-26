@@ -81,7 +81,7 @@ const Dashboard = () => {
                   className="fw-medium mt-2"
                   style={{ fontSize: "13px", color: "#21AB6F" }}
                 >
-                  Température idéale : {"<"} 21 {"\u00B0C"}
+                  T. idéale : {"<"} 21 {"\u00B0C"}
                 </span>
               )
             }

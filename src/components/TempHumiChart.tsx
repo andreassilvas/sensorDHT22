@@ -26,9 +26,9 @@ export const TempHumiChart = ({ data }: TempHumiChartProps) => {
         marginBottom: "50px",
       }}
     >
-      <h5 className="mb-2 ps-4 text-center text-secondary">
+      <h6 className="mb-2 ps-4 text-center text-secondary">
         Évolution de la température et du taux d'humidité
-      </h5>
+      </h6>
 
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={data}>
