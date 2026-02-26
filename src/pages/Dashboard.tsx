@@ -27,12 +27,38 @@ const Dashboard = () => {
 
   return (
     <div className="container-fluid pt-3">
-      <div className="mb-3">
-        {isOffline ? (
-          <span className="badge bg-danger p-2">Capteur hors ligne</span>
-        ) : (
-          <span className="badge bg-success">Capteur en ligne</span>
-        )}
+      <div className="row mb-4">
+        <div className="col-6">
+          <div className="mb-3">
+            {isOffline ? (
+              <span className="badge bg-danger p-2">Capteur hors ligne</span>
+            ) : (
+              <span className="badge bg-success">Capteur en ligne</span>
+            )}
+          </div>
+        </div>
+        <div className="col-6 d-flex justify-content-end ps-5">
+          <button
+            className={`btn me-2 ${period === "history" ? "btn btn-secondary" : "btn-outline-secondary"}`}
+            onClick={() => setPeriod("history")}
+          >
+            Par heure
+          </button>
+
+          <button
+            className={`btn me-2 ${period === "7d" ? "btn btn-secondary" : "btn-outline-secondary"}`}
+            onClick={() => setPeriod("7d")}
+          >
+            7 Jours
+          </button>
+
+          <button
+            className={`btn ${period === "10d" ? "btn btn-secondary" : "btn-outline-secondary"}`}
+            onClick={() => setPeriod("10d")}
+          >
+            10 Jours
+          </button>
+        </div>
       </div>
       <div className="row align-items-stretch">
         <div className="col-12 col-xl-3 ps-5 d-flex justify-content-center align-items-center">
@@ -92,30 +118,6 @@ const Dashboard = () => {
           <MaxAndVariationChart
             data={period === "history" ? hourlyExtremesData : dailyExtremesData}
           />
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-12 d-flex justify-content-start ps-5">
-          <button
-            className={`btn me-2 ${period === "history" ? "btn btn-secondary" : "btn-outline-secondary"}`}
-            onClick={() => setPeriod("history")}
-          >
-            Par heure
-          </button>
-
-          <button
-            className={`btn me-2 ${period === "7d" ? "btn btn-secondary" : "btn-outline-secondary"}`}
-            onClick={() => setPeriod("7d")}
-          >
-            7 Jours
-          </button>
-
-          <button
-            className={`btn ${period === "10d" ? "btn btn-secondary" : "btn-outline-secondary"}`}
-            onClick={() => setPeriod("10d")}
-          >
-            10 Jours
-          </button>
         </div>
       </div>
     </div>
