@@ -49,6 +49,15 @@ export const Navbar = () => {
           <i className="bi bi-journal-bookmark fs-5 text-white"></i>
           <span className="text-white">À propos</span>
         </NavLink>
+        <NavLink
+          to="/documentation"
+          className={({ isActive }) =>
+            `nav-link rounded d-flex align-items-center gap-2 nav-hover-lightViolet mb-2 me-2 ${isActive ? "active fw-bold" : ""}`
+          }
+        >
+          <i className="bi bi-file-earmark-pdf fs-5 text-white"></i>
+          <span className="text-white">Documentation</span>
+        </NavLink>
       </div>
     </nav>
   );

@@ -1,14 +1,7 @@
 export const Info = () => {
   return (
     <div className="container">
-      <div className="row mb-5">
-        <div className="col d-flex justify-content-end">
-          <button className="btn btn-purple">
-            Télécharger la documentation
-          </button>
-        </div>
-      </div>
-      <div className="row">
+      <div className="row mt-4">
         <div className="col-6">
           <div className="card customCard-s text-secondary">
             <div className="card-header pt-3 border-0 customCard-s">
