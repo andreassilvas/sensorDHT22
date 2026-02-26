@@ -39,21 +39,24 @@ const Dashboard = () => {
         </div>
         <div className="col-6 d-flex justify-content-end ps-5">
           <button
-            className={`btn me-2 ${period === "history" ? "btn btn-secondary" : "btn-outline-secondary"}`}
+            style={{ height: "40px" }}
+            className={`btn me-2 ${period === "history" ? "btn-purple" : "btn-purple-outline"}`}
             onClick={() => setPeriod("history")}
           >
             Par heure
           </button>
 
           <button
-            className={`btn me-2 ${period === "7d" ? "btn btn-secondary" : "btn-outline-secondary"}`}
+            style={{ height: "40px" }}
+            className={`btn btn-sm me-2 ${period === "7d" ? "btn-purple" : "btn-purple-outline"}`}
             onClick={() => setPeriod("7d")}
           >
             7 Jours
           </button>
 
           <button
-            className={`btn ${period === "10d" ? "btn btn-secondary" : "btn-outline-secondary"}`}
+            style={{ height: "40px" }}
+            className={`btn ${period === "10d" ? "btn-purple" : "btn-purple-outline"}`}
             onClick={() => setPeriod("10d")}
           >
             10 Jours
