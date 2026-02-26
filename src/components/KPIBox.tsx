@@ -16,7 +16,7 @@ export const KPIBox = ({
   hightLowAlert,
 }: KPIBoxProps) => {
   return (
-    <div className="col-3 mb-3">
+    <div className="w-100 mb-3">
       <div
         className="card text-center shadow-sm rounded-5 border-2 p-3 card"
         style={{

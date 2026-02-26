@@ -34,8 +34,8 @@ const Dashboard = () => {
           <span className="badge bg-success">Capteur en ligne</span>
         )}
       </div>
-      <div className="row d-flex justify-content-center align-items-center">
-        <div className="col-3 ps-5">
+      <div className="row align-items-stretch">
+        <div className="col-12 col-xl-3 ps-5 d-flex justify-content-center align-items-center">
           <KPIBox
             title="Température"
             src={imageTemperature}
@@ -58,14 +58,14 @@ const Dashboard = () => {
             }
           />
         </div>
-        <div className="col-9 pe-3">
+        <div className="col-12 col-xl-9 pe-3">
           <TempHumiChart
             data={period === "history" ? combinedHourlyData : combinedDailyData}
           />
         </div>
       </div>
-      <div className="row mb-4 d-flex justify-content-center align-items-center">
-        <div className="col-3 ps-5">
+      <div className="row align-items-stretch">
+        <div className="col-12 col-xl-3 ps-5 d-flex justify-content-center align-items-center">
           <KPIBox
             title="Humidité"
             src={imageHumidity}
@@ -88,7 +88,7 @@ const Dashboard = () => {
             }
           />
         </div>
-        <div className="col-9">
+        <div className="col-12 col-xl-9">
           <MaxAndVariationChart
             data={period === "history" ? hourlyExtremesData : dailyExtremesData}
           />

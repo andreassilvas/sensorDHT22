@@ -84,8 +84,8 @@ const TemperatureHistory = () => {
     },
   };
   return (
-    <div className="container">
-      <div className="card" style={{ width: "80rem" }}>
+    <div className="container-fluid px-3">
+      <div className="card w-100">
         <div className="card-body table-responsive">
           <DataTable
             columns={[
@@ -115,8 +115,10 @@ const TemperatureHistory = () => {
             ]}
             data={tableData}
             pagination
+            responsive
+            dense
             customStyles={customStyle}
-            paginationRowsPerPageOptions={[10, 13]}
+            paginationRowsPerPageOptions={[15, 20]}
             actions={
               <button
                 className="btn btn-success btn-sm"
