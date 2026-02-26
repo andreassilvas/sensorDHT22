@@ -41,7 +41,7 @@ const Dashboard = () => {
             src={imageTemperature}
             alt="temperature icon"
             fill="#1E075C"
-            value={`${lastReading?.temperature?.toFixed(1) ?? "--"} \u00B0C`}
+            value={`${lastReading?.temperature?.toFixed(1) ?? "--"}`}
             hightLowAlert={
               isHighTemp ? (
                 <span className="badge rounded-pill text-bg-danger mt-2">
@@ -71,7 +71,7 @@ const Dashboard = () => {
             src={imageHumidity}
             alt="humidity icon"
             fill="#1E075C"
-            value={`${lastReading?.humidity?.toFixed(1) ?? "--"} %`}
+            value={`${lastReading?.humidity?.toFixed(1) ?? "--"}`}
             hightLowAlert={
               isLowHumidity ? (
                 <span className="badge bg-warning text-dark mt-2">
